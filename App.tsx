@@ -1,20 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { FC, ReactElement } from 'react';
+import {styles} from './styles';
 
-export default function App() {
+// native Components
+import { StatusBar } from 'expo-status-bar';
+import { SafeAreaView } from 'react-native';
+
+// COMPONENTS
+import EntryApp from './EntryApp';
+
+const App: FC = (): ReactElement => {
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <StatusBar style="dark" />
+      <EntryApp />
+    </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
